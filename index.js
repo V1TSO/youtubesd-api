@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const axios = require("axios");
-const port = 4000;
 const cheerio = require('cheerio');
 const fs = require('file-saver')
 
@@ -63,7 +62,7 @@ app.get('/api/:format/:id', (req, res) => {
 }
 );
 
-app.listen(4000, () => {
-    console.log(`Example app listening on port ${port}!`);
+app.listen(process.env.PORT || 8080, () => {
+    console.log(`Example app listening on port ${process.env.PORT}!`);
 }
 );
