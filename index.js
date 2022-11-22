@@ -34,6 +34,7 @@ const getLinks = (ftype, ytid) => {
 
                 }).catch(function (error) {
                     resolve(error);
+                    console.log(error)
                 });
         } else {
             resolve("No ID")
@@ -43,7 +44,7 @@ const getLinks = (ftype, ytid) => {
 }
 
 app.get('/', (req, res) => {
-    res.send('Go to www.yourwebsite.com/links to get the links')
+    res.send('https://v1tso.github.io/sdownloader/')
 }
 );
 
@@ -55,7 +56,7 @@ app.get('/api/:format/:id', (req, res) => {
         ytid = req.params.id
         const links = getLinks(ftype, ytid)
             .then((val) => {
-                res.redirect(val)
+                res.send(val)
                 console.log("Done!")
             })
     }
