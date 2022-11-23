@@ -56,7 +56,7 @@ app.get('/api/:format/:id', (req, res) => {
         ytid = req.params.id
         const links = getLinks(ftype, ytid)
             .then((val) => {
-                res.send(val)
+                res.redirect(val)
                 console.log("Done!")
             })
     }
