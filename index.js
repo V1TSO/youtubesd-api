@@ -9,8 +9,8 @@ const options = (ftype, ytid) => {
         method: 'GET',
         url: `https://api.vevioz.com/api/widget/${ftype}/${ytid}`,
         headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            'Content-Type': 'text/html',
+            'Accept': 'text/html'
         },
     }
 };
